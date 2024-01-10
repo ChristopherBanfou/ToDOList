@@ -90,7 +90,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             tasksearch = personnal
         } else {
             for todo in personnal {
-                if todo.name.contains(searchText) {
+                if todo.name.range(of: searchText, options: .caseInsensitive) != nil {
                     tasksearch.append(todo)
                 }
             }
